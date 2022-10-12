@@ -36,10 +36,10 @@
    window.weatherWidgetConfig.push({
        selector:".weatherWidget",
        apiKey:"KFWR3KEFF3JBCBTB9M4KQCD4R", //Sign up for your personal key
-       location:"West New York, New Jersey", //Enter an address
+       location:"West NEw York, New Jersey", //Enter an address
        unitGroup:"us", //"us" or "metric"
        forecastDays:5, //how many days forecast to show
-       title:"West New York, New Jersey", //optional title to show in the 
+       title:"The Weather in your area", //optional title to show in the 
        showTitle:true, 
        showConditions:true
    });
@@ -51,6 +51,8 @@
    (d.head || d.body).appendChild(s);
    })();
 </script>
+<input type="text" placeholder="Search for your city here" >
+<button> Search</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
