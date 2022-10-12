@@ -29,58 +29,20 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <table class="table table-hover table-dark">
-        <thead>
-          <input 
-          type="text" >
-          <button>Search</button>
-          <tr>
-            <th scope="col"> Search for a City:</th>
-            
-          
-          </tr>
-        </thead>
+      <form class="form-inline">
+        <div class="form-group mb-2">
+          <label for="staticEmail2" class="sr-only">Email</label>
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Search for a City:">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="inputPassword2" class="sr-only">Search for a city</label>
+          <input type="password" class="form-control" id="inputPassword2" placeholder="San Diego">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </form>
         <tbody>
-          <tr>
-            <th scope="row">Atlanta</th>
-            
-            
-          </tr>
-          <tr>
-            <th scope="row">Denver</th>
-           
-            
-          </tr>
-          <tr>
-            <th scope="row">Seattle</th>
-           
-            
-          </tr>
-          <tr>
-            <th scope="row">San Francisco</th>
-         
-            
-          </tr>
-          <tr>
-            <th scope="row">Orlando</th>
+       
           
-            
-          </tr>
-          <tr>
-            <th scope="row">New York</th>
-          
-            
-          </tr>
-          <tr>
-            <th scope="row">Chicago</th>
-          
-            
-          </tr>
-          <tr>
-            <th scope="row">Austin</th>
-            
-            
-          </tr>
         </tbody>
       </table>
     </div>
@@ -88,5 +50,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script> src="script.js"</script>
+    <script>"bootstrap.css"</script>
   </body>
 </html>
