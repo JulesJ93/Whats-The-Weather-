@@ -15,8 +15,8 @@ textarea{
 
 .jumbotron {
   text-align: right;
-  background-color: rgb(64, 63, 160);
-  color: rgb(240, 245, 248);
+  background-color: rgb(159, 167, 172);
+  color: rgb(12, 113, 172);
   border-radius: 0;
 
 }
@@ -33,11 +33,11 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid rgb(97, 50, 12);;
 }
 
 .hour {
-  background-color: #ffffff;
+  background-color: #97671e;
   color: #000000;
   border-top: 1px dashed #000000;
 }
