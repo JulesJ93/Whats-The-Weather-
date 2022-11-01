@@ -35,3 +35,64 @@ var currentweather = {
     uvAlert: "",
     icon: ""
 }
+
+var getWeather = function (city){
+
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=" + apiKey;
+    var lat = "";
+    var lon = "";
+    fetch(apiUrl).then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) {
+                //console.log(data);
+                currentWeather.name = data.name;
+                currentWeather.date = moment().format("dddd, MMMM Do YYYY");
+                currentWeather.temp = data.main.temp + " &#176F";
+                currentWeather.humidity = data.main.humidity+"%";
+                currentWeather.wind = data.wind.speed + " MPH";
+                currentWeather.icon = data.weather[0].icon;
+                lat = data.coord.lat;
+                lon = data.coord.lon;
+
+                var uvUrl = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat="+lat+"&lon="+lon;
+                fetch(uvUrl)
+                .then(function(uvResponse) {
+                    if (uvResponse.ok) {
+                        uvResponse.json().then(function(uvData) {
+                            //console.log(uvData);
+                            currentWeather.uv = uvData.value;
+                            console.log("Current Weather data ", currentWeather); 
+                            //displayWeather();
+                            curStatsEl.style.display = "block";
+                            forecastContEl.style.display = "block";
+                            cityNameEl.innerHTML = currentWeather.name;
+                            curDateEl.innerHTML = currentWeather.date;
+                            curTempEl.innerHTML = currentWeather.temp;
+                            curHumidityEl.innerHTML = currentWeather.humidity;
+                            curWindEl.innerHTML = currentWeather.wind;
+                            curUvEl.innerHTML = currentWeather.uv;
+                            curIconEl.innerHTML = "<img src='https://openweathermap.org/img/wn/" + currentWeather.icon + "@2x.png'></img>";
+                            uvCheck();                        
+                            getForecast(city);
+                        });
+                    }
+                    else {
+                        curUvEl.innerHTML = "Error";
+                        currentWeather.uv = "error";
+                    }
+                    
+                });
+
+            });
+        } else {
+            //alert ("Error: " + response.statusText);
+            clearData();
+            cityNameEl.innerHTML = "Error: " + response.status + " " + city + " " + response.statusText;
+
+
+        }
+    })
+    .catch (function(error) {
+        cityNameEl.innerHTML = error.message + " Please try again later.";
+    })
+}
