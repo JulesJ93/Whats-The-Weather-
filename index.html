@@ -31,26 +31,7 @@
     <div class="container">
       <div class="weatherWidget" ></div>
 
-<script>
-   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-   window.weatherWidgetConfig.push({
-       selector:".weatherWidget",
-       apiKey:"KFWR3KEFF3JBCBTB9M4KQCD4R", //Sign up for your personal key
-       location:"West NEw York, New Jersey", //Enter an address
-       unitGroup:"us", //"us" or "metric"
-       forecastDays:5, //how many days forecast to show
-       title:"The Weather in your area", //optional title to show in the 
-       showTitle:true, 
-       showConditions:true
-   });
-  
-   (function() {
-   var d = document, s = d.createElement('script');
-   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
-   s.setAttribute('data-timestamp', +new Date());
-   (d.head || d.body).appendChild(s);
-   })();
-</script>
+
 <input type="text" placeholder="Search for your city here" >
 <button> Search</button>
     </div>
