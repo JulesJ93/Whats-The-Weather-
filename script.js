@@ -12,3 +12,9 @@ var currentweather = {
     uvAlert: "",
     icon: ""
 }
+
+//array for storing the previously searched cities
+var searchHistory = [];
+
+//this variable sets up the forecast for each day
+var forecast={};
